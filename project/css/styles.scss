@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css?family=Mukta:700");
+
+$bg: #f3f8fa;
+$white: #fff;
+$black: #282936;
+
+@mixin transition($property: all, $duration: 0.45s, $ease: cubic-bezier(0.65, 0, 0.076, 1)) {
+  transition: $property $duration $ease;
+}
+
+.row-home {
+  color: floralwhite;
+  padding: 30px;
+
+  h1 {
+    font-size: 64px;
+  }
+
+  h2{
+    font-size: 48px;
+  }
+
+  .p {
+    font-size: 24px;
+  }
+
+  button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    &.learn-more {
+      width: 12rem;
+      height: auto;
+      .circle {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+        position: relative;
+        margin: 0;
+        width: 3rem;
+        height: 3rem;
+        background: $white;
+        border-radius: 1.625rem;
+        .icon {
+          @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          margin: auto;
+          background: $black;
+          &.arrow {
+            @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+            left: 0.625rem;
+            width: 1.125rem;
+            height: 0.125rem;
+            background: none;
+            &::before {
+              position: absolute;
+              content: "";
+              top: -0.25rem;
+              right: 0.0625rem;
+              width: 0.625rem;
+              height: 0.625rem;
+              border-top: 0.125rem solid #212121;
+              border-right: 0.125rem solid #212121;
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+      .button-text {
+        @include transition(all, 0.45s, cubic-bezier(0.65, 0, 0.076, 1));
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.75rem 0;
+        margin: 0 0 0 1.85rem;
+        color: $white;
+        font-weight: 700;
+        line-height: 1.6;
+        text-align: center;
+        text-transform: uppercase;
+      }
+    }
+    &:hover {
+      .circle {
+        width: 100%;
+        .icon {
+          &.arrow {
+            background: $black;
+            transform: translate(1rem, 0);
+          }
+        }
+      }
+      .button-text {
+        color: $black;
+      }
+    }
+  }
+}
+
+body {
+  font-family: "Montserrat";
+  margin: 50px 0px 0px;
+}
+
+footer {
+  background: #37474f;
+  color: floralwhite;
+  padding: 30px;
+  a {
+    margin: 45px 45px auto auto;
+    color: floralwhite;
+  }
+}
+
+.parallax {
+  /* The image used */
+  background-image: url(../images/wallpapers.jpg);
+
+  /* Set a specific height */
+  height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.navbar-brand {
+  .brand_word {
+    font-weight: 900;
+    font-size: 1.7rem;
+    text-shadow: 0 0 1px #333;
+    color: #ffffff;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.fa-google-plus :hover,
+.fa-facebook :hover {
+  color: coral;
+}
+
+.brand_word {
+  font-weight: 900;
+  font-size: 2.7rem;
+  text-shadow: 0 0 1px #333;
+  color: #ffffff;
+}
+
+.brand_p1 {
+  font-family: Garamond, fantasy;
+}
+
+.brand_p2 {
+  font-family: papyrus, fantasy;
+  margin-left: -0.23rem;
+}
+
+.row-event1 {
+  background: #ffeb3b;
+  padding: 75px 30px;
+  h1 {
+    font-size: 42px;
+  }
+}
+
+.row-about {
+  background: #212121;
+  color: floralwhite;
+  padding: 75px 30px;
+}
+
+.row-event2 {
+  background: #3949ab;
+  color: white;
+  padding: 75px 30px;
+  h1 {
+    font-size: 42px;
+  }
+}
